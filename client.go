@@ -5,6 +5,7 @@
 package goryman
 
 import (
+	"log"
 	"net"
 	"time"
 
@@ -43,6 +44,7 @@ func (c *GorymanClient) Close() error {
 func (c *GorymanClient) SendEvent(e *Event) error {
 	epb, err := EventToProtocolBuffer(e)
 	if err != nil {
+		//log.Print(err)
 		return err
 	}
 
@@ -56,6 +58,7 @@ func (c *GorymanClient) SendEvent(e *Event) error {
 func (c *GorymanClient) SendState(s *State) error {
 	spb, err := StateToProtocolBuffer(s)
 	if err != nil {
+		log.Print(err)
 		return err
 	}
 

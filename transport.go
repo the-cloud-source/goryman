@@ -38,6 +38,7 @@ func (t *Transport) Send(message *proto.Msg) error {
 	case t.w <- message:
 		return nil
 	case err := <-t.err:
+		log.Print(err)
 		return err
 	}
 }
@@ -52,6 +53,7 @@ func (t *Transport) Close() error {
 func (t *Transport) writeLoop() {
 	for message := range t.w {
 		if err := t.write(message); err != nil {
+			log.Print(err)
 			t.err <- err
 			return
 		}
