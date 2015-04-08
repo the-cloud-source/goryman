@@ -44,9 +44,9 @@ func EventToProtocolBuffer(event *Event) (*proto.Event, error) {
 				t.FieldByName(name).Set(tmp)
 			case "Metric":
 				switch reflect.TypeOf(f.Interface()).Kind() {
-				case reflect.Int64:
-					tmp := reflect.ValueOf(pb.Int64(int64(value.Int64())))
-					t.FieldByName("MetricSint64").Set(tmp)
+				//case reflect.Int64:
+				//	tmp := reflect.ValueOf(pb.Int64(int64(value.Int64())))
+				//	t.FieldByName("MetricSint64").Set(tmp)
 				case reflect.Int:
 					tmp := reflect.ValueOf(pb.Int64(int64(value.Int())))
 					t.FieldByName("MetricSint64").Set(tmp)
@@ -113,9 +113,9 @@ func StateToProtocolBuffer(state *State) (*proto.State, error) {
 				t.FieldByName(name).Set(tmp)
 			case "Metric":
 				switch reflect.TypeOf(f.Interface()).Kind() {
-				case reflect.Int64:
-					tmp := reflect.ValueOf(pb.Int64(int64(value.Int64())))
-					t.FieldByName("MetricSint64").Set(tmp)
+				//case reflect.Int64:
+				//	tmp := reflect.ValueOf(pb.Int64(int64(value.Int64())))
+				//	t.FieldByName("MetricSint64").Set(tmp)
 				case reflect.Int:
 					tmp := reflect.ValueOf(pb.Int64(int64(value.Int())))
 					t.FieldByName("MetricSint64").Set(tmp)
