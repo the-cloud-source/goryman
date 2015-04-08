@@ -9,7 +9,7 @@ import (
 	"net"
 
 	pb "github.com/golang/protobuf/proto"
-	"github.com/bigdatadev/goryman/proto"
+	"github.com/The-Cloud-Source/goryman/proto"
 )
 
 type Transport struct {

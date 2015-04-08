@@ -8,7 +8,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/bigdatadev/goryman/proto"
+	"github.com/The-Cloud-Source/goryman/proto"
 )
 
 // GorymanClient is a client library to send events to Riemann
