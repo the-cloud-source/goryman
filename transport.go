@@ -66,9 +66,11 @@ func (t *Transport) write(message *proto.Msg) error {
 		log.Panicf("goryman: marshal error: %v", err)
 	}
 	if err = binary.Write(t.wb, binary.BigEndian, uint32(len(data))); err != nil {
+		log.Print(err)
 		return err
 	}
 	if _, err = t.wb.Write(data); err != nil {
+		log.Print(err)
 		return err
 	}
 	return nil
