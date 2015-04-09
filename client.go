@@ -16,6 +16,7 @@ import (
 type GorymanClient struct {
 	tcp  *Transport
 	addr string
+	msg proto.Msg
 }
 
 // NewGorymanClient - Factory
@@ -48,10 +49,13 @@ func (c *GorymanClient) SendEvent(e *Event) error {
 		return err
 	}
 
-	message := &proto.Msg{}
-	message.Events = append(message.Events, epb)
-
-	return c.tcp.Send(message)
+	c.msg.Events = append(c.msg.Events, epb)
+	if len(c.msg.Events) < 100 {
+		return nil
+	}
+	err = c.tcp.Send(&c.msg)
+	c.msg.Events = c.msg.Events[:0]
+	return err
 }
 
 // Send a state update
