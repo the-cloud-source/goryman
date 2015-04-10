@@ -53,10 +53,12 @@ func (t *Transport) Close() error {
 func (t *Transport) writeLoop() {
 	for message := range t.w {
 		if err := t.write(message); err != nil {
+			message.Events = message.Events[:0]
 			log.Print(err)
 			t.err <- err
 			return
 		}
+		message.Events = message.Events[:0]
 	}
 }
 

@@ -54,7 +54,7 @@ func (c *GorymanClient) SendEvent(e *Event) error {
 		return nil
 	}
 	err = c.tcp.Send(&c.msg)
-	c.msg.Events = c.msg.Events[:0]
+	//c.msg.Events = c.msg.Events[:0]
 	return err
 }
 
