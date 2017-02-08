@@ -1,6 +1,6 @@
 # Riemann client (Golang)
 
-[![GoDoc](https://godoc.org/github.com/bigdatadev/goryman?status.png)](http://godoc.org/github.com/bigdatadev/goryman)
+[![GoDoc](https://godoc.org/github.com/The-Cloud-Source/goryman?status.png)](http://godoc.org/github.com/The-Cloud-Source/goryman)
 
 ## Introduction
 
@@ -18,7 +18,7 @@ Features:
 To install the package for use in your own programs:
 
 ```
-go get github.com/bigdatadev/goryman
+go get github.com/The-Cloud-Source/goryman
 ```
 
 If you're a developer, Riemann uses [Google Protocol Buffers](http://code.google.com/p/protobuf/), so make sure that's installed and available on your PATH.
@@ -33,7 +33,7 @@ First we'll need to import the library:
 
 ```go
 import (
-    "github.com/bigdatadev/goryman"
+    "github.com/The-Cloud-Source/goryman"
 )
 ```
 
